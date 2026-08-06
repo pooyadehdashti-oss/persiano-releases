@@ -6,19 +6,27 @@
 
 **Orders, customers, production, correspondence and publishing in one configurable WordPress workspace.**
 
-Batchly is a modular business-operations system created by **Persiano Dish** for independent food businesses, bakeries, caterers, meal-prep businesses and other small product-based operations.
+Batchly is a modular business-operations platform created by **Persiano Dish** for independent food businesses, bakeries, caterers, meal-prep businesses and other small product-based operations.
 
 > **Your business, organized.**
 
-## Current versions
+## Current platform release
 
 | Package | Current version |
 | --- | ---: |
-| **Batchly plugin** | **0.56.2** |
-| **Batchly Theme** | **1.1.1** |
+| **Batchly Core plugin** | **0.56.3** |
+| **Theme API** | **1.0** |
 | WordPress | 6.5 or newer |
 | PHP | 7.4 or newer |
-| WooCommerce | Required for commerce features |
+
+Storefront themes are separate products. Persiano Dish, Velvet Crumbs and future clients may each use a different Batchly-compatible theme with its own design, version and update channel.
+
+## Platform model
+
+- **Batchly Core** owns business operations, integrations and the stable theme-facing API.
+- **Commerce adapters** connect Batchly to commerce systems. WooCommerce is the current adapter for the existing product, cart, checkout and order workflows.
+- **Storefront themes** are independently customizable and can be standard, client-specific or fully custom.
+- Themes should use the documented Batchly helpers, hooks and REST endpoints rather than internal tables or legacy Persiano-specific options.
 
 ## Main capabilities
 
@@ -31,42 +39,49 @@ Batchly is a modular business-operations system created by **Persiano Dish** for
 - Food labels, Avery sheets, barcodes and QR codes
 - Publishing and external-channel connections
 - Trial monitoring and tester feedback
-- Shared GitHub-based updates while each site keeps its own data and credentials
+- Shared Core updates while each site keeps its own data, branding, theme and credentials
 
-## Latest release — 0.56.2
+## Latest release — 0.56.3
 
-- Adds a canonical WordPress **Update URI** for Batchly.
-- Improves the WordPress **View details** modal with a full description, installation instructions, changelog, homepage, icons and banner metadata.
-- Uses this repository as the canonical plugin-information and release-details location.
-- Includes all Manual Order, label-selection and monitoring-interface fixes from 0.56.1.
+- Separates Batchly Core updates from storefront-theme updates.
+- Removes theme packages from the Core updater and Core release requirements.
+- Adds **Theme API 1.0** with public helpers, hooks and REST endpoints.
+- Makes business-profile and theme-integration services available independently of WooCommerce.
+- Treats WooCommerce as the current optional commerce adapter instead of a theme requirement.
+- Preserves all existing WooCommerce-backed operational features when WooCommerce is active.
+
+This release establishes the compatibility boundary. A fully native Batchly product/order engine remains a future development phase.
 
 ## Installation
 
 1. Open the repository's [Releases page](https://github.com/pooyadehdashti-oss/persiano-releases/releases).
-2. Download the latest `batchly-vX.Y.Z.zip` plugin package.
+2. Download the latest `batchly-vX.Y.Z.zip` Core package.
 3. In WordPress, open **Plugins → Add New Plugin → Upload Plugin**.
-4. Upload, install and activate Batchly.
-5. To install the storefront theme, download `batchly-theme-vX.Y.Z.zip` and upload it under **Appearance → Themes → Add Theme → Upload Theme**.
+4. Upload, install and activate Batchly Core.
+5. Install any compatible storefront theme separately under **Appearance → Themes**.
 
 Existing Batchly and former Persiano Hub installations retain their existing products, customers, orders, correspondence, settings and third-party credentials during normal upgrades.
 
-## Automated release publishing
+## Theme compatibility
 
-The repository includes a GitHub Actions workflow that can validate and publish Batchly ZIP packages as a GitHub Release. It supports three package sources, in this order:
+Batchly Core 0.56.3 exposes Theme API 1.0, including:
 
-1. A checked-in `source/persiano-hub` and `source/batchly-theme` tree
-2. ZIP files under `release-assets/`
-3. Public package URLs supplied when manually starting the workflow
+- `batchly_get_business_profile()`
+- `batchly_get_theme_api_version()`
+- `batchly_get_commerce_adapter()`
+- `batchly_theme_is_compatible()`
+- `batchly_theme_api_ready` action
+- `batchly_business_profile` and `batchly_commerce_adapter` filters
+- `/wp-json/batchly/v1/business-profile`
+- `/wp-json/batchly/v1/compatibility`
 
-The workflow verifies the ZIP structure before publishing. The plugin ZIP must contain a top-level `persiano-hub/` folder; the theme ZIP must contain a top-level `batchly-theme/` folder.
+## Release publishing
 
-## Update model
-
-One Batchly release can update Persiano Dish, the Velvet Crumbs demo and future client sites. Each installation receives the same software while retaining its own branding, business data and third-party credentials.
+The Core release workflow validates and publishes `batchly-vX.Y.Z.zip`. Theme packages should use separate repositories or release workflows so client themes can evolve independently.
 
 ## Release history
 
-See [`docs/RELEASES.md`](docs/RELEASES.md) for the maintained release summary and [`latest.json`](latest.json) for machine-readable current-version information.
+See [`docs/RELEASES.md`](docs/RELEASES.md) for the maintained release summary and [`latest.json`](latest.json) for machine-readable Core metadata.
 
 ## Product preview
 
