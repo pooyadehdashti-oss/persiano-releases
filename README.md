@@ -4,65 +4,84 @@
 
 # Batchly
 
-**Build, queue and monitor repeatable jobs across your WordPress operations.**
+**Orders, customers, production, correspondence and publishing in one configurable WordPress workspace.**
 
-Batchly is a technical, powerful workflow engine by **Persiano Dish**. It brings visual orchestration, dependable background processing, live operational visibility, and multi-channel publishing into one WordPress-ready system.
+Batchly is a modular business-operations system created by **Persiano Dish** for independent food businesses, bakeries, caterers, meal-prep businesses and other small product-based operations.
 
-> **Run every workflow with confidence.**
+> **Your business, organized.**
 
-## What Batchly does
+## Current versions
 
-| Capability | What it gives you |
-| --- | --- |
-| **Visual workflows** | Compose repeatable operational flows with clear stages and handoffs. |
-| **Reliable job queues** | Schedule and process work predictably, including long-running and recurring jobs. |
-| **Live monitoring** | Follow active work, trial activity, progress, and outcomes from one operational view. |
-| **Multi-channel publishing** | Coordinate reviewed content and jobs across the destinations your workflow supports. |
+| Package | Current version |
+| --- | ---: |
+| **Batchly plugin** | **0.56.1** |
+| **Batchly Theme** | **1.1.1** |
+| WordPress | 6.5 or newer |
+| PHP | 7.4 or newer |
+| WooCommerce | Required for commerce features |
 
-## One workflow, four clear stages
+## Main capabilities
 
-<div align="center">
+- Business Setup Wizard and reusable business profiles
+- Products, customers and manual orders
+- Secure payment-link workflows
+- Order-based email and SMS correspondence
+- Square transaction synchronization
+- Recipes, costing, production and fulfilment tools
+- Food labels, Avery sheets, barcodes and QR codes
+- Publishing and external-channel connections
+- Trial monitoring and tester feedback
+- Shared GitHub-based updates while each site keeps its own data and credentials
 
-**Trigger** → **Process** → **Review** → **Publish**
+## Latest release — 0.56.1
 
-</div>
+### Manual Order improvements
 
-1. **Trigger** — Start work from an event, schedule, or operator action.
-2. **Process** — Queue and execute the repeatable steps that move the job forward.
-3. **Review** — Inspect the output and apply the checks your operation requires.
-4. **Publish** — Deliver approved results through the configured channel.
+- Restored the responsive Manual Order form layout.
+- Corrected customer, guest, consent, item, fulfilment and payment-field alignment.
+- Preserved **Send for secure online payment** as the default payment handling.
 
-This structure keeps automation understandable without sacrificing operational control.
+### Food Label improvements
 
-## Requirements
+- Added **Select all**, **Clear all**, **Left**, **Right**, **Reverse**, and **Select first N** controls for Avery label positions.
+- Improved multi-position Avery 5163 workflows.
+- Preserved barcode, QR-code, business-profile and product-label functionality from 0.56.0.
 
-| Component | Requirement |
-| --- | --- |
-| Batchly | **0.55.2** |
-| WordPress | **6.5 or newer** |
-| PHP | **7.4 or newer** |
-| Multisite | **Compatible**, including network environments |
+### Trial monitoring interface
+
+- Reduced feedback-prompt interference on operational forms.
+- Added a close control and improved responsive placement.
 
 ## Installation
 
-This repository is a distribution archive, not the Batchly source tree.
+This repository is the Batchly distribution and release-information repository.
 
-1. Download the Batchly `0.55.2` ZIP archive from this repository's [Releases page](https://github.com/pooyadehdashti-oss/persiano-releases/releases) when it is published.
-2. In WordPress, open **Plugins → Add New Plugin → Upload Plugin**.
-3. Select the downloaded ZIP, choose **Install Now**, then activate Batchly.
-4. For multisite installations, a network administrator can activate Batchly from **Network Admin → Plugins**.
+1. Open the repository's [Releases page](https://github.com/pooyadehdashti-oss/persiano-releases/releases).
+2. Download the latest `batchly-vX.Y.Z.zip` plugin package.
+3. In WordPress, open **Plugins → Add New Plugin → Upload Plugin**.
+4. Upload, install and activate Batchly.
+5. To install the storefront theme, download `batchly-theme-vX.Y.Z.zip` and upload it under **Appearance → Themes → Add Theme → Upload Theme**.
 
-> The Batchly ZIP is not currently stored in the checked-in release files. Do not install either of the unrelated ZIP archives in this repository as Batchly.
+Existing Batchly and former Persiano Hub installations retain their existing products, customers, orders, correspondence, settings and third-party credentials during normal upgrades.
 
-## Current release — 0.55.2
+## Update model
 
-- Improved trial monitoring for clearer, more dependable visibility into trial activity.
-- Fixed menu reliability issues for more consistent navigation and access.
+One Batchly release can update:
+
+- Persiano Dish
+- Velvet Crumbs demo
+- Future client and trial installations
+
+Each site receives the same software code while retaining its own branding, business data and credentials. Third-party connections such as Square, QuickBooks, Twilio, SMTP, Instagram/Meta and Telegram must be configured separately by each business.
+
+## Release history
+
+See [`docs/RELEASES.md`](docs/RELEASES.md) for the maintained release summary and [`latest.json`](latest.json) for machine-readable current-version information.
 
 ## Product preview
 
 <div align="center">
-  <img src="docs/assets/batchly-plugin-details.svg" alt="Batchly product details preview showing features, workflow, compatibility, and active status" width="100%">
+  <img src="docs/assets/batchly-plugin-details.svg" alt="Batchly product details preview" width="100%">
 </div>
 
 ## Author
