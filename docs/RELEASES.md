@@ -1,11 +1,23 @@
 # Batchly Release History
 
+## 0.56.3 — Core and Theme Separation
+
+- Separated Batchly Core updates from storefront-theme updates.
+- Removed theme packages from the Core updater and Core release requirements.
+- Added Batchly Theme API 1.0 with stable helpers, hooks and public REST endpoints.
+- Made business-profile and theme-integration services available independently of WooCommerce.
+- Reframed WooCommerce as the current commerce adapter for existing commerce features.
+- Preserved all current WooCommerce-backed operations when WooCommerce is active.
+- Established the compatibility boundary for independently designed and versioned client themes.
+
+This release does not yet replace WooCommerce-backed products and orders with a fully native Batchly commerce engine.
+
 ## 0.56.2 — Update Delivery & Plugin Details
 
 - Added a canonical WordPress `Update URI` for Batchly.
 - Improved the WordPress **View details** modal with description, installation guidance, changelog, homepage, icon and banner metadata.
 - Uses the Batchly GitHub repository as the canonical update-information location.
-- Added a GitHub Actions workflow for validating and publishing plugin and theme ZIP assets.
+- Added a GitHub Actions workflow for validating and publishing ZIP assets.
 - Includes all Manual Order and Food Label fixes from 0.56.1.
 
 ## 0.56.1 — Manual Order & Label Tools
