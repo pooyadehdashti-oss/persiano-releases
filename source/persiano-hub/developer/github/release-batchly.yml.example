@@ -1,0 +1,36 @@
+name: Release Batchly
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build plugin and theme packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSION="${GITHUB_REF_NAME#v}"
+          mkdir -p dist build
+          rsync -a ./persiano-hub/ ./build/persiano-hub/ \
+            --exclude '.git/' --exclude '.github/' --exclude 'build/' --exclude 'dist/'
+          ( cd build && zip -qr "../dist/batchly-v${VERSION}.zip" persiano-hub )
+          THEME_VERSION=$(awk -F': ' '/^Version:/{print $2; exit}' batchly-theme/style.css | tr -d '\r')
+          rsync -a ./batchly-theme/ ./build/batchly-theme/
+          ( cd build && zip -qr "../dist/batchly-theme-v${THEME_VERSION}.zip" batchly-theme )
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" dist/*.zip --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" dist/*.zip --generate-notes --title "Batchly ${GITHUB_REF_NAME#v}"
+          fi

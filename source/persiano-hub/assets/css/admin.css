@@ -1,0 +1,46 @@
+#persiano_hub_product_data .ph-admin-intro p,
+#persiano_hub_product_data .ph-admin-stock-note p {
+  padding: 12px 20px;
+  margin: 0;
+  color: #5f554c;
+  line-height: 1.55;
+}
+#persiano_hub_product_data .ph-admin-intro { background: #fbf7ef; }
+#persiano_hub_product_data .ph-admin-stock-note { background: #f8f3e9; }
+.ph-admin-pill {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f3e8e9;
+  color: #8e2435;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Product catalogue fields */
+#persiano_hub_product_data .ph-admin-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 18px;
+  padding: 0 20px 18px 162px;
+}
+#persiano_hub_product_data .ph-admin-choice-grid label {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+#persiano_hub_product_data .ph-admin-choice-grid input { margin-top: 2px; }
+@media (max-width: 782px) {
+  #persiano_hub_product_data .ph-admin-choice-grid {
+    grid-template-columns: 1fr;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Batchly v0.16 operations workspace */
+.ph-ops-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.ph-ops-card{background:#fff;border:1px solid #ddd;border-radius:10px;padding:16px}.ph-ops-card h3{margin:0 0 8px}.ph-status-chip{display:inline-block;padding:3px 8px;border-radius:999px;background:#f0f0f1;font-size:12px;font-weight:600}.ph-status-active{background:#e7f6ec}.ph-status-done{background:#e8f0fe}.ph-status-archived{background:#f1f1f1;color:#666}.ph-ops-inline-fields{display:flex;gap:16px;flex-wrap:wrap;align-items:end;margin:0 0 20px}.ph-ops-inline-fields label{display:flex;flex-direction:column;gap:5px;font-weight:600}.ph-ops-edit-table input[type=number]{max-width:120px}.ph-ops-edit-table select{max-width:220px}.ph-row-excluded{opacity:.55}.ph-quick-actions{line-height:1.8}.ph-practical-vendor{border-top:1px solid #ddd;padding:10px 0}.ph-practical-vendor h3{display:flex;justify-content:space-between;margin-bottom:6px}.ph-practical-vendor ul{margin:0 0 10px 20px}.ph-grand-total{font-size:18px}.ph-scan-mode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}.ph-scan-mode-card{margin-top:0}.ph-price-stale{color:#b32d2e;font-weight:600}@media(max-width:782px){.ph-ops-inline-fields{display:block}.ph-ops-inline-fields label{margin-bottom:12px}.ph-ops-edit-table{min-width:1000px}}
+
+/* 0.25.1 admin table stability */
+.post-type-product .wp-list-table .column-persiano{width:110px!important;min-width:110px!important;white-space:normal!important}.post-type-product .wp-list-table .column-persiano .ph-admin-pill{display:inline-block;margin:2px 3px 2px 0;padding:3px 7px;border-radius:999px;line-height:1.25;white-space:nowrap}.post-type-product .wp-list-table th.column-persiano,.post-type-product .wp-list-table td.column-persiano{word-break:normal!important;overflow-wrap:normal!important}.post-type-product .wp-list-table .column-name{min-width:260px}.post-type-product .wp-list-table td,.post-type-product .wp-list-table th{vertical-align:top}
