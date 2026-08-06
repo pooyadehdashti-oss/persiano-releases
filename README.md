@@ -14,7 +14,7 @@ Batchly is a modular business-operations system created by **Persiano Dish** for
 
 | Package | Current version |
 | --- | ---: |
-| **Batchly plugin** | **0.56.1** |
+| **Batchly plugin** | **0.56.2** |
 | **Batchly Theme** | **1.1.1** |
 | WordPress | 6.5 or newer |
 | PHP | 7.4 or newer |
@@ -33,28 +33,14 @@ Batchly is a modular business-operations system created by **Persiano Dish** for
 - Trial monitoring and tester feedback
 - Shared GitHub-based updates while each site keeps its own data and credentials
 
-## Latest release — 0.56.1
+## Latest release — 0.56.2
 
-### Manual Order improvements
-
-- Restored the responsive Manual Order form layout.
-- Corrected customer, guest, consent, item, fulfilment and payment-field alignment.
-- Preserved **Send for secure online payment** as the default payment handling.
-
-### Food Label improvements
-
-- Added **Select all**, **Clear all**, **Left**, **Right**, **Reverse**, and **Select first N** controls for Avery label positions.
-- Improved multi-position Avery 5163 workflows.
-- Preserved barcode, QR-code, business-profile and product-label functionality from 0.56.0.
-
-### Trial monitoring interface
-
-- Reduced feedback-prompt interference on operational forms.
-- Added a close control and improved responsive placement.
+- Adds a canonical WordPress **Update URI** for Batchly.
+- Improves the WordPress **View details** modal with a full description, installation instructions, changelog, homepage, icons and banner metadata.
+- Uses this repository as the canonical plugin-information and release-details location.
+- Includes all Manual Order, label-selection and monitoring-interface fixes from 0.56.1.
 
 ## Installation
-
-This repository is the Batchly distribution and release-information repository.
 
 1. Open the repository's [Releases page](https://github.com/pooyadehdashti-oss/persiano-releases/releases).
 2. Download the latest `batchly-vX.Y.Z.zip` plugin package.
@@ -64,15 +50,19 @@ This repository is the Batchly distribution and release-information repository.
 
 Existing Batchly and former Persiano Hub installations retain their existing products, customers, orders, correspondence, settings and third-party credentials during normal upgrades.
 
+## Automated release publishing
+
+The repository includes a GitHub Actions workflow that can validate and publish Batchly ZIP packages as a GitHub Release. It supports three package sources, in this order:
+
+1. A checked-in `source/persiano-hub` and `source/batchly-theme` tree
+2. ZIP files under `release-assets/`
+3. Public package URLs supplied when manually starting the workflow
+
+The workflow verifies the ZIP structure before publishing. The plugin ZIP must contain a top-level `persiano-hub/` folder; the theme ZIP must contain a top-level `batchly-theme/` folder.
+
 ## Update model
 
-One Batchly release can update:
-
-- Persiano Dish
-- Velvet Crumbs demo
-- Future client and trial installations
-
-Each site receives the same software code while retaining its own branding, business data and credentials. Third-party connections such as Square, QuickBooks, Twilio, SMTP, Instagram/Meta and Telegram must be configured separately by each business.
+One Batchly release can update Persiano Dish, the Velvet Crumbs demo and future client sites. Each installation receives the same software while retaining its own branding, business data and third-party credentials.
 
 ## Release history
 
