@@ -1,26 +1,32 @@
 {
-  "product": "Batchly",
+  "product": "Batchly Core",
   "plugin": {
-    "version": "0.56.2",
-    "asset": "batchly-v0.56.2.zip",
+    "version": "0.56.3",
+    "asset": "batchly-v0.56.3.zip",
     "slug": "persiano-hub",
     "details_url": "https://github.com/pooyadehdashti-oss/persiano-releases/releases/latest",
     "minimum_wordpress": "6.5",
     "minimum_php": "7.4",
-    "requires_woocommerce": true
+    "theme_api": "1.0",
+    "commerce_adapters": {
+      "woocommerce": {
+        "status": "supported",
+        "required_for_existing_commerce_features": true
+      }
+    }
   },
-  "theme": {
-    "version": "1.1.1",
-    "asset": "batchly-theme-v1.1.1.zip",
-    "slug": "batchly-theme"
+  "themes": {
+    "bundled": false,
+    "release_channel": "separate",
+    "compatibility_contract": "Batchly Theme API"
   },
   "channel": "stable",
-  "released_at": "2026-08-06T15:35:00-07:00",
+  "released_at": "2026-08-06T15:44:00-07:00",
   "highlights": [
-    "Adds canonical Update URI and repository metadata",
-    "Improves the WordPress View details modal",
-    "Adds description, installation, changelog, icon and banner metadata",
-    "Includes all Manual Order and Food Label fixes from 0.56.1"
+    "Separates Batchly Core and storefront-theme update channels",
+    "Adds Theme API 1.0 helpers, hooks and REST endpoints",
+    "Makes business-profile and theme integration available without WooCommerce",
+    "Keeps existing WooCommerce-backed commerce features unchanged"
   ],
   "repository": "pooyadehdashti-oss/persiano-releases"
 }
