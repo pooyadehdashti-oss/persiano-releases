@@ -1,0 +1,128 @@
+name: Publish Batchly Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      plugin_version:
+        description: Batchly plugin version, for example 0.56.2
+        required: true
+        type: string
+      theme_version:
+        description: Batchly Theme version, for example 1.1.1
+        required: false
+        default: "1.1.1"
+        type: string
+      plugin_url:
+        description: Optional public URL for the plugin ZIP
+        required: false
+        type: string
+      theme_url:
+        description: Optional public URL for the theme ZIP
+        required: false
+        type: string
+      prerelease:
+        description: Publish as a prerelease
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      PLUGIN_VERSION: ${{ inputs.plugin_version }}
+      THEME_VERSION: ${{ inputs.theme_version }}
+      PLUGIN_FILE: batchly-v${{ inputs.plugin_version }}.zip
+      THEME_FILE: batchly-theme-v${{ inputs.theme_version }}.zip
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Prepare release packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+
+          if [ -d source/persiano-hub ]; then
+            (cd source && zip -qr "../dist/${PLUGIN_FILE}" persiano-hub)
+          elif [ -f "release-assets/${PLUGIN_FILE}" ]; then
+            cp "release-assets/${PLUGIN_FILE}" "dist/${PLUGIN_FILE}"
+          elif [ -n "${{ inputs.plugin_url }}" ]; then
+            curl --fail --location --retry 3 "${{ inputs.plugin_url }}" --output "dist/${PLUGIN_FILE}"
+          else
+            echo "No plugin package source was found." >&2
+            echo "Add source/persiano-hub, upload release-assets/${PLUGIN_FILE}, or provide plugin_url." >&2
+            exit 1
+          fi
+
+          if [ -d source/batchly-theme ]; then
+            (cd source && zip -qr "../dist/${THEME_FILE}" batchly-theme)
+          elif [ -f "release-assets/${THEME_FILE}" ]; then
+            cp "release-assets/${THEME_FILE}" "dist/${THEME_FILE}"
+          elif [ -n "${{ inputs.theme_url }}" ]; then
+            curl --fail --location --retry 3 "${{ inputs.theme_url }}" --output "dist/${THEME_FILE}"
+          else
+            echo "Theme package was not supplied; publishing the plugin only."
+          fi
+
+      - name: Validate ZIP structure
+        shell: bash
+        run: |
+          set -euo pipefail
+          unzip -t "dist/${PLUGIN_FILE}"
+          unzip -Z1 "dist/${PLUGIN_FILE}" | grep -q '^persiano-hub/'
+
+          if [ -f "dist/${THEME_FILE}" ]; then
+            unzip -t "dist/${THEME_FILE}"
+            unzip -Z1 "dist/${THEME_FILE}" | grep -q '^batchly-theme/'
+          fi
+
+      - name: Build release notes
+        shell: bash
+        run: |
+          set -euo pipefail
+          NOTES="docs/releases/${PLUGIN_VERSION}.md"
+          if [ -f "$NOTES" ]; then
+            cp "$NOTES" release-notes.md
+          else
+            cat > release-notes.md <<EOF
+          # Batchly ${PLUGIN_VERSION}
+
+          See README.md and docs/RELEASES.md for the maintained feature and release summary.
+          EOF
+          fi
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="v${PLUGIN_VERSION}"
+          FILES=("dist/${PLUGIN_FILE}")
+          if [ -f "dist/${THEME_FILE}" ]; then
+            FILES+=("dist/${THEME_FILE}")
+          fi
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "${FILES[@]}" --clobber
+            gh release edit "$TAG" --title "Batchly ${PLUGIN_VERSION}" --notes-file release-notes.md
+          else
+            EXTRA=()
+            if [ "${{ inputs.prerelease }}" = "true" ]; then
+              EXTRA+=(--prerelease)
+            fi
+            gh release create "$TAG" "${FILES[@]}" --title "Batchly ${PLUGIN_VERSION}" --notes-file release-notes.md "${EXTRA[@]}"
+          fi
+
+      - name: Summary
+        run: |
+          echo "Published ${PLUGIN_FILE}" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f "dist/${THEME_FILE}" ]; then
+            echo "Published ${THEME_FILE}" >> "$GITHUB_STEP_SUMMARY"
+          fi
