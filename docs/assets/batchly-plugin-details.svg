@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="920" viewBox="0 0 1440 920" role="img" aria-labelledby="title desc">
+  <title id="title">Batchly plugin details preview</title>
+  <desc id="desc">A WordPress-inspired product details panel with Batchly features, workflow stages, compatibility, version, author, and active status.</desc>
+  <rect width="1440" height="920" rx="24" fill="#F3F6FC"/>
+  <rect x="48" y="44" width="1344" height="832" rx="20" fill="#FFFFFF" stroke="#DCE3F0" stroke-width="2"/>
+  <path d="M48 238H1392" stroke="#DCE3F0" stroke-width="2"/>
+  <rect x="84" y="80" width="122" height="122" rx="28" fill="#07142F"/>
+  <g transform="translate(109 100)">
+    <g fill="#1769FF"><rect width="18" height="18" rx="4"/><rect y="23" width="18" height="18" rx="4"/><rect y="46" width="18" height="18" rx="4"/><rect y="69" width="18" height="18" rx="4"/><rect x="23" width="29" height="18" rx="4"/><rect x="23" y="46" width="29" height="18" rx="4"/></g>
+    <g fill="#7657FF"><rect x="57" y="4" width="18" height="18" rx="4"/><rect x="57" y="27" width="18" height="14" rx="4"/><rect x="57" y="50" width="20" height="16" rx="4"/><rect x="57" y="71" width="18" height="12" rx="4"/></g>
+    <rect x="23" y="23" width="27" height="18" rx="4" fill="#EAF1FF"/><rect x="23" y="69" width="27" height="18" rx="4" fill="#EAF1FF"/>
+  </g>
+  <text x="238" y="126" fill="#07142F" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="48" font-weight="750">Batchly</text>
+  <text x="238" y="168" fill="#52617D" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22">Build, queue and monitor repeatable jobs across your WordPress operations.</text>
+  <text x="238" y="200" fill="#1769FF" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" font-weight="650">Run every workflow with confidence.</text>
+  <rect x="1170" y="104" width="162" height="52" rx="26" fill="#E8F8EF"/>
+  <circle cx="1201" cy="130" r="7" fill="#159455"/>
+  <text x="1220" y="138" fill="#0E6F40" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700">Active</text>
+
+  <text x="88" y="292" fill="#07142F" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="27" font-weight="750">Built for operational clarity</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif">
+    <g transform="translate(88 326)"><rect width="300" height="154" rx="16" fill="#F7F9FD" stroke="#DCE3F0"/><rect x="22" y="24" width="42" height="42" rx="10" fill="#1769FF"/><path d="M34 36h18M34 45h13M34 54h18" stroke="#FFF" stroke-width="3" stroke-linecap="round"/><text x="22" y="92" fill="#07142F" font-size="19" font-weight="700">Visual workflows</text><text x="22" y="120" fill="#61708B" font-size="15">Compose repeatable operations</text><text x="22" y="141" fill="#61708B" font-size="15">with clear stages.</text></g>
+    <g transform="translate(410 326)"><rect width="300" height="154" rx="16" fill="#F7F9FD" stroke="#DCE3F0"/><rect x="22" y="24" width="42" height="42" rx="10" fill="#1769FF"/><path d="M34 38h18v14H34zM38 33h18v14" fill="none" stroke="#FFF" stroke-width="3" stroke-linejoin="round"/><text x="22" y="92" fill="#07142F" font-size="19" font-weight="700">Reliable job queues</text><text x="22" y="120" fill="#61708B" font-size="15">Schedule and process work</text><text x="22" y="141" fill="#61708B" font-size="15">predictably.</text></g>
+    <g transform="translate(88 502)"><rect width="300" height="154" rx="16" fill="#F7F9FD" stroke="#DCE3F0"/><rect x="22" y="24" width="42" height="42" rx="10" fill="#7657FF"/><path d="M32 52l8-9 7 6 9-14" fill="none" stroke="#FFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="22" y="92" fill="#07142F" font-size="19" font-weight="700">Live monitoring</text><text x="22" y="120" fill="#61708B" font-size="15">Track active work, progress,</text><text x="22" y="141" fill="#61708B" font-size="15">and outcomes.</text></g>
+    <g transform="translate(410 502)"><rect width="300" height="154" rx="16" fill="#F7F9FD" stroke="#DCE3F0"/><rect x="22" y="24" width="42" height="42" rx="10" fill="#7657FF"/><circle cx="43" cy="45" r="12" fill="none" stroke="#FFF" stroke-width="3"/><path d="M43 33v24M31 45h24" stroke="#FFF" stroke-width="2"/><text x="22" y="92" fill="#07142F" font-size="19" font-weight="700">Multi-channel publishing</text><text x="22" y="120" fill="#61708B" font-size="15">Deliver reviewed results to</text><text x="22" y="141" fill="#61708B" font-size="15">configured destinations.</text></g>
+  </g>
+
+  <rect x="758" y="280" width="574" height="376" rx="18" fill="#0B1836"/>
+  <text x="794" y="328" fill="#FFFFFF" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="23" font-weight="700">Compatibility</text>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18">
+    <text x="794" y="382" fill="#94A6CC">Version</text><text x="1262" y="382" fill="#FFFFFF" text-anchor="end" font-weight="650">0.55.2</text>
+    <path d="M794 404H1296" stroke="#26385F"/>
+    <text x="794" y="444" fill="#94A6CC">WordPress</text><text x="1262" y="444" fill="#FFFFFF" text-anchor="end" font-weight="650">6.5+</text>
+    <path d="M794 466H1296" stroke="#26385F"/>
+    <text x="794" y="506" fill="#94A6CC">PHP</text><text x="1262" y="506" fill="#FFFFFF" text-anchor="end" font-weight="650">7.4+</text>
+    <path d="M794 528H1296" stroke="#26385F"/>
+    <text x="794" y="568" fill="#94A6CC">Multisite / network</text><text x="1262" y="568" fill="#6D9BFF" text-anchor="end" font-weight="650">Compatible</text>
+    <path d="M794 590H1296" stroke="#26385F"/>
+    <text x="794" y="630" fill="#94A6CC">Author</text><text x="1262" y="630" fill="#FFFFFF" text-anchor="end" font-weight="650">Persiano Dish</text>
+  </g>
+
+  <text x="88" y="718" fill="#07142F" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" font-weight="750">A workflow you can follow</text>
+  <g transform="translate(88 750)" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" font-weight="700">
+    <rect width="1244" height="78" rx="16" fill="#F0F4FC"/>
+    <rect x="20" y="17" width="220" height="44" rx="12" fill="#1769FF"/><text x="130" y="45" fill="#FFF" text-anchor="middle">Trigger</text>
+    <path d="M252 39h54m-10-8 10 8-10 8" fill="none" stroke="#8291AE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="320" y="17" width="220" height="44" rx="12" fill="#3159C9"/><text x="430" y="45" fill="#FFF" text-anchor="middle">Process</text>
+    <path d="M552 39h54m-10-8 10 8-10 8" fill="none" stroke="#8291AE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="620" y="17" width="220" height="44" rx="12" fill="#5B59C7"/><text x="730" y="45" fill="#FFF" text-anchor="middle">Review</text>
+    <path d="M852 39h54m-10-8 10 8-10 8" fill="none" stroke="#8291AE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="920" y="17" width="304" height="44" rx="12" fill="#7657FF"/><text x="1072" y="45" fill="#FFF" text-anchor="middle">Publish</text>
+  </g>
+</svg>
