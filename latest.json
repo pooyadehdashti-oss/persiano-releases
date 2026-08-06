@@ -1,0 +1,23 @@
+{
+  "product": "Batchly",
+  "plugin": {
+    "version": "0.56.1",
+    "asset": "batchly-v0.56.1.zip",
+    "minimum_wordpress": "6.5",
+    "minimum_php": "7.4",
+    "requires_woocommerce": true
+  },
+  "theme": {
+    "version": "1.1.1",
+    "asset": "batchly-theme-v1.1.1.zip"
+  },
+  "channel": "stable",
+  "released_at": "2026-08-06T15:27:00-07:00",
+  "highlights": [
+    "Restored the responsive Manual Order layout",
+    "Added Avery label bulk-selection controls",
+    "Improved Trial Monitoring feedback-prompt placement",
+    "Includes all Batchly 0.56.0 label and maintenance fixes"
+  ],
+  "repository": "pooyadehdashti-oss/persiano-releases"
+}
