@@ -1,8 +1,8 @@
 {
   "product": "Batchly Core",
   "plugin": {
-    "version": "0.56.3",
-    "asset": "batchly-v0.56.3.zip",
+    "version": "0.56.4",
+    "asset": "batchly-v0.56.4.zip",
     "slug": "persiano-hub",
     "details_url": "https://github.com/pooyadehdashti-oss/persiano-releases/releases/latest",
     "minimum_wordpress": "6.5",
@@ -21,12 +21,12 @@
     "compatibility_contract": "Batchly Theme API"
   },
   "channel": "stable",
-  "released_at": "2026-08-06T15:44:00-07:00",
+  "released_at": "2026-08-06T16:44:00-07:00",
   "highlights": [
-    "Separates Batchly Core and storefront-theme update channels",
-    "Adds Theme API 1.0 helpers, hooks and REST endpoints",
-    "Makes business-profile and theme integration available without WooCommerce",
-    "Keeps existing WooCommerce-backed commerce features unchanged"
+    "Fixes GitHub release ZIP downloads in WordPress",
+    "Uses browser_download_url for public repositories",
+    "Preserves authenticated API downloads for private repositories",
+    "Validates private downloads before WordPress opens the ZIP"
   ],
   "repository": "pooyadehdashti-oss/persiano-releases"
 }

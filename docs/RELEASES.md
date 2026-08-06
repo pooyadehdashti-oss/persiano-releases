@@ -1,5 +1,14 @@
 # Batchly Release History
 
+## 0.56.4 — WordPress Update Download Fix
+
+- Fixed `PCLZIP_ERR_BAD_FORMAT` during GitHub-delivered WordPress updates.
+- Public repositories now use GitHub's direct `browser_download_url`.
+- Private repositories continue using authenticated GitHub API asset downloads.
+- Added ZIP-signature validation and clearer invalid-package errors.
+- Preserved the working Batchly **View details** metadata.
+- Batchly Core and storefront themes remain independently released.
+
 ## 0.56.3 — Core and Theme Separation
 
 - Separated Batchly Core updates from storefront-theme updates.

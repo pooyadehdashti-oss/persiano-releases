@@ -266,6 +266,26 @@ class Persiano_Hub_Updater {
         );
     }
 
+    /**
+     * Select the correct GitHub package URL.
+     *
+     * Public repositories use browser_download_url so WordPress receives the
+     * ZIP directly. Private repositories use the authenticated API asset URL.
+     */
+    private static function package_url_for_asset( $asset ) {
+        $settings = self::get_settings();
+
+        if ( ! empty( $settings['token'] ) && ! empty( $asset['api_url'] ) ) {
+            return $asset['api_url'];
+        }
+
+        if ( ! empty( $asset['browser_url'] ) ) {
+            return $asset['browser_url'];
+        }
+
+        return ! empty( $asset['api_url'] ) ? $asset['api_url'] : '';
+    }
+
     public static function inject_plugin_update( $transient ) {
         if ( ! is_object( $transient ) ) {
             $transient = new stdClass();
@@ -286,7 +306,7 @@ class Persiano_Hub_Updater {
             $update->plugin         = $plugin_file;
             $update->new_version    = $asset['version'];
             $update->url            = ! empty( $payload['release']['html_url'] ) ? esc_url_raw( $payload['release']['html_url'] ) : 'https://github.com/pooyadehdashti-oss/persiano-releases';
-            $update->package        = $asset['api_url'];
+            $update->package        = self::package_url_for_asset( $asset );
             $update->requires_php   = '7.4';
             $update->tested         = get_bloginfo( 'version' );
             $update->icons          = array(
@@ -344,7 +364,7 @@ class Persiano_Hub_Updater {
         $info->downloaded    = 0;
         $info->active_installs = 0;
         $info->short_description = __( 'Orders, customers, correspondence, fulfilment, labels, costing and publishing in one configurable workspace.', 'persiano-hub' );
-        $info->download_link = $asset['api_url'];
+        $info->download_link = self::package_url_for_asset( $asset );
         $info->sections      = array(
             'description' => __( 'Batchly combines products, customers, orders, secure payment requests, order-based email and SMS correspondence, recipes, costing, labels, fulfilment, publishing and trial monitoring in one configurable WordPress workspace.', 'persiano-hub' ),
             'installation'=> __( 'Upload the Batchly ZIP through Plugins → Add New Plugin → Upload Plugin, or use WordPress automatic updates after connecting the GitHub release repository under Batchly → Updates.', 'persiano-hub' ),
@@ -409,6 +429,26 @@ class Persiano_Hub_Updater {
             return new WP_Error(
                 'persiano_update_download_failed',
                 sprintf( __( 'GitHub could not provide the update package (HTTP %d).', 'persiano-hub' ), $code )
+            );
+        }
+
+        $handle    = @fopen( $tmp, 'rb' );
+        $signature = $handle ? fread( $handle, 4 ) : '';
+
+        if ( $handle ) {
+            fclose( $handle );
+        }
+
+        if ( 0 !== strpos( $signature, 'PK' ) ) {
+            $content_type = wp_remote_retrieve_header( $response, 'content-type' );
+            @unlink( $tmp );
+
+            return new WP_Error(
+                'persiano_update_invalid_package',
+                sprintf(
+                    __( 'GitHub returned an invalid update package instead of a ZIP file%s.', 'persiano-hub' ),
+                    $content_type ? ' (' . sanitize_text_field( $content_type ) . ')' : ''
+                )
             );
         }
 
@@ -500,7 +540,7 @@ class Persiano_Hub_Updater {
 
                 <hr>
                 <h3><?php esc_html_e( 'Required release asset names', 'persiano-hub' ); ?></h3>
-                <p><span class="ph-code">batchly-v0.56.3.zip</span></p>
+                <p><span class="ph-code">batchly-v0.56.4.zip</span></p>
                 <p class="description"><?php esc_html_e( 'Future versions can use any higher semantic version number; the updater detects the version from each ZIP filename.', 'persiano-hub' ); ?></p>
 
                 <p>

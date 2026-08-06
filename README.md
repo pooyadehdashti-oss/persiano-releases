@@ -14,7 +14,7 @@ Batchly is a modular business-operations platform created by **Persiano Dish** f
 
 | Package | Current version |
 | --- | ---: |
-| **Batchly Core plugin** | **0.56.3** |
+| **Batchly Core plugin** | **0.56.4** |
 | **Theme API** | **1.0** |
 | WordPress | 6.5 or newer |
 | PHP | 7.4 or newer |
@@ -41,7 +41,7 @@ Storefront themes are separate products. Persiano Dish, Velvet Crumbs and future
 - Trial monitoring and tester feedback
 - Shared Core updates while each site keeps its own data, branding, theme and credentials
 
-## Latest release — 0.56.3
+## Latest release — 0.56.4
 
 - Separates Batchly Core updates from storefront-theme updates.
 - Removes theme packages from the Core updater and Core release requirements.

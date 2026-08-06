@@ -3,7 +3,7 @@
  * Plugin Name: Batchly
  * Plugin URI: https://github.com/pooyadehdashti-oss/persiano-releases
  * Description: Configurable business tools for products, orders, correspondence, fulfilment, customer messaging, analytics and multi-channel publishing.
- * Version: 0.56.3
+ * Version: 0.56.4
  * Author: Batchly Project
  * Author URI: https://github.com/pooyadehdashti-oss/persiano-releases
  * Update URI: https://github.com/pooyadehdashti-oss/persiano-releases
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'PERSIANO_HUB_VERSION', '0.56.3' );
+define( 'PERSIANO_HUB_VERSION', '0.56.4' );
 define( 'PERSIANO_HUB_FILE', __FILE__ );
 define( 'PERSIANO_HUB_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PERSIANO_HUB_URL', plugin_dir_url( __FILE__ ) );
