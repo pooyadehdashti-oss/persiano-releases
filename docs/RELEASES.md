@@ -1,5 +1,13 @@
 # Batchly Release History
 
+## 0.56.2 — Update Delivery & Plugin Details
+
+- Added a canonical WordPress `Update URI` for Batchly.
+- Improved the WordPress **View details** modal with description, installation guidance, changelog, homepage, icon and banner metadata.
+- Uses the Batchly GitHub repository as the canonical update-information location.
+- Added a GitHub Actions workflow for validating and publishing plugin and theme ZIP assets.
+- Includes all Manual Order and Food Label fixes from 0.56.1.
+
 ## 0.56.1 — Manual Order & Label Tools
 
 - Restored the responsive Manual Order page layout.
