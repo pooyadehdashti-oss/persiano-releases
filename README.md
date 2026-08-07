@@ -14,7 +14,7 @@ Batchly is a modular business-operations platform created by **Persiano Dish** f
 
 | Package | Current version |
 | --- | ---: |
-| **Batchly Core plugin** | **0.56.4** |
+| **Batchly Core plugin** | **0.56.5** |
 | **Theme API** | **1.0** |
 | WordPress | 6.5 or newer |
 | PHP | 7.4 or newer |
@@ -41,16 +41,12 @@ Storefront themes are separate products. Persiano Dish, Velvet Crumbs and future
 - Trial monitoring and tester feedback
 - Shared Core updates while each site keeps its own data, branding, theme and credentials
 
-## Latest release — 0.56.4
-
-- Separates Batchly Core updates from storefront-theme updates.
-- Removes theme packages from the Core updater and Core release requirements.
-- Adds **Theme API 1.0** with public helpers, hooks and REST endpoints.
-- Makes business-profile and theme-integration services available independently of WooCommerce.
-- Treats WooCommerce as the current optional commerce adapter instead of a theme requirement.
-- Preserves all existing WooCommerce-backed operational features when WooCommerce is active.
-
-This release establishes the compatibility boundary. A fully native Batchly product/order engine remains a future development phase.
+## Latest release — 0.56.5
+    
+- Removes the obsolete theme updater card from Batchly Core.
+- Clarifies that client storefront themes are optional and independently released.
+- Preserves the corrected GitHub ZIP download handling from 0.56.4.
+- Provides the first complete GitHub → WordPress automatic-update test.
 
 ## Installation
 

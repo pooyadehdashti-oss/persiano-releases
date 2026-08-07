@@ -1,5 +1,13 @@
 # Batchly Release History
 
+## 0.56.5 — Core Update Channel Cleanup
+
+- Removed the obsolete Batchly Theme status card from the Core Updates screen.
+- Removed wording that required every Core release to include a theme ZIP.
+- Clarified that storefront themes are optional, independently versioned and independently distributed.
+- Preserved the GitHub browser-download fix introduced in 0.56.4.
+- Provides the first end-to-end test of updating Batchly through WordPress **Update now**.
+
 ## 0.56.4 — WordPress Update Download Fix
 
 - Fixed `PCLZIP_ERR_BAD_FORMAT` during GitHub-delivered WordPress updates.

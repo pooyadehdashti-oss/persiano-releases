@@ -540,7 +540,7 @@ class Persiano_Hub_Updater {
 
                 <hr>
                 <h3><?php esc_html_e( 'Required release asset names', 'persiano-hub' ); ?></h3>
-                <p><span class="ph-code">batchly-v0.56.4.zip</span></p>
+                <p><span class="ph-code">batchly-v0.56.5.zip</span></p>
                 <p class="description"><?php esc_html_e( 'Future versions can use any higher semantic version number; the updater detects the version from each ZIP filename.', 'persiano-hub' ); ?></p>
 
                 <p>
