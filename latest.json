@@ -1,8 +1,8 @@
 {
   "product": "Batchly Core",
   "plugin": {
-    "version": "0.56.5",
-    "asset": "batchly-v0.56.5.zip",
+    "version": "0.56.6",
+    "asset": "batchly-v0.56.6.zip",
     "slug": "persiano-hub",
     "details_url": "https://github.com/pooyadehdashti-oss/persiano-releases/releases/latest",
     "minimum_wordpress": "6.5",
@@ -21,12 +21,12 @@
     "compatibility_contract": "Batchly Theme API"
   },
   "channel": "stable",
-  "released_at": "2026-08-06T17:05:00-07:00",
+  "released_at": "2026-08-06T17:15:00-07:00",
   "highlights": [
-    "Removes the obsolete theme updater card from Batchly Core",
-    "Clarifies that storefront themes are independently managed",
-    "Preserves the repaired public and private GitHub download handling",
-    "Serves as the first end-to-end WordPress automatic-update test"
+    "Restores access to Batchly Updates for site administrators",
+    "Fixes Check now permissions on WordPress multisite",
+    "Keeps installation permissions controlled by WordPress",
+    "Preserves GitHub-delivered automatic updates"
   ],
   "repository": "pooyadehdashti-oss/persiano-releases"
 }

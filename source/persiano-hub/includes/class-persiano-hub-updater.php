@@ -40,7 +40,7 @@ class Persiano_Hub_Updater {
             'persiano-hub',
             __( 'Batchly Updates', 'persiano-hub' ),
             __( 'Updates', 'persiano-hub' ),
-            'update_plugins',
+            'manage_options',
             self::MENU_SLUG,
             array( __CLASS__, 'render_admin_page' )
         );
@@ -77,7 +77,7 @@ class Persiano_Hub_Updater {
             return;
         }
 
-        if ( ! current_user_can( 'update_plugins' ) ) {
+        if ( ! current_user_can( 'manage_options' ) ) {
             wp_die( esc_html__( 'You do not have permission to change update settings.', 'persiano-hub' ) );
         }
 
@@ -122,7 +122,7 @@ class Persiano_Hub_Updater {
     }
 
     public static function handle_check_now() {
-        if ( ! current_user_can( 'update_plugins' ) ) {
+        if ( ! current_user_can( 'manage_options' ) ) {
             wp_die( esc_html__( 'You do not have permission to check for updates.', 'persiano-hub' ) );
         }
 
@@ -466,7 +466,7 @@ class Persiano_Hub_Updater {
     }
 
     public static function render_admin_page() {
-        if ( ! current_user_can( 'update_plugins' ) ) {
+        if ( ! current_user_can( 'manage_options' ) ) {
             return;
         }
 
@@ -540,7 +540,7 @@ class Persiano_Hub_Updater {
 
                 <hr>
                 <h3><?php esc_html_e( 'Required release asset names', 'persiano-hub' ); ?></h3>
-                <p><span class="ph-code">batchly-v0.56.5.zip</span></p>
+                <p><span class="ph-code">batchly-v0.56.6.zip</span></p>
                 <p class="description"><?php esc_html_e( 'Future versions can use any higher semantic version number; the updater detects the version from each ZIP filename.', 'persiano-hub' ); ?></p>
 
                 <p>

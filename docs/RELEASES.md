@@ -1,5 +1,12 @@
 # Batchly Release History
 
+## 0.56.6 — Multisite Update Permissions Fix
+
+- Restored the Batchly Updates page for site administrators.
+- Changed page, settings and manual-check access from `update_plugins` to `manage_options`.
+- Actual plugin installation remains governed by WordPress and network permissions.
+- Preserved the GitHub update and plugin-details integrations.
+
 ## 0.56.5 — Core Update Channel Cleanup
 
 - Removed the obsolete Batchly Theme status card from the Core Updates screen.
