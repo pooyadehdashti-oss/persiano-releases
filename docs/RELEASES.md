@@ -1,5 +1,11 @@
 # Batchly Release History
 
+## 0.57.1 — Corrected Google Reviews Release
+
+- Corrected the plugin version included in the release package.
+- Re-published the Google Reviews via Make.com feature.
+- Supersedes the incorrectly packaged 0.57.0 release.
+
 ## 0.57.0 — Google Reviews via Make
 
 - Added secure Make.com webhook endpoints for Google Business Profile reviews.

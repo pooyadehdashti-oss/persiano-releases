@@ -1,8 +1,8 @@
 {
   "product": "Batchly Core",
   "plugin": {
-    "version": "0.57.0",
-    "asset": "batchly-v0.57.0.zip",
+    "version": "0.57.1",
+    "asset": "batchly-v0.57.1.zip",
     "slug": "persiano-hub",
     "details_url": "https://github.com/pooyadehdashti-oss/persiano-releases/releases/latest",
     "minimum_wordpress": "6.5",
@@ -21,7 +21,7 @@
     "compatibility_contract": "Batchly Theme API"
   },
   "channel": "stable",
-  "released_at": "2026-08-06T18:05:00-07:00",
+  "released_at": "2026-08-06T18:30:00-07:00",
   "highlights": [
     "Adds Google Business Profile review imports through Make.com",
     "Adds secure single-review and bulk-import REST endpoints",
