@@ -1,5 +1,15 @@
 # Batchly Release History
 
+## 0.57.0 — Google Reviews via Make
+
+- Added secure Make.com webhook endpoints for Google Business Profile reviews.
+- Added single-review and historical bulk-import support.
+- Deduplicates and updates reviews using the Google review ID.
+- Stores reviewer name, photo, rating, comment, business reply and timestamps locally.
+- Added an admin review list with publish, hide, feature and unfeature controls.
+- Added the `[batchly_reviews]` website shortcode.
+- Added configurable rating, limit, layout, featured-only, photo and reply display options.
+
 ## 0.56.6 — Multisite Update Permissions Fix
 
 - Restored the Batchly Updates page for site administrators.

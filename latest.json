@@ -1,8 +1,8 @@
 {
   "product": "Batchly Core",
   "plugin": {
-    "version": "0.56.6",
-    "asset": "batchly-v0.56.6.zip",
+    "version": "0.57.0",
+    "asset": "batchly-v0.57.0.zip",
     "slug": "persiano-hub",
     "details_url": "https://github.com/pooyadehdashti-oss/persiano-releases/releases/latest",
     "minimum_wordpress": "6.5",
@@ -21,12 +21,12 @@
     "compatibility_contract": "Batchly Theme API"
   },
   "channel": "stable",
-  "released_at": "2026-08-06T17:15:00-07:00",
+  "released_at": "2026-08-06T18:05:00-07:00",
   "highlights": [
-    "Restores access to Batchly Updates for site administrators",
-    "Fixes Check now permissions on WordPress multisite",
-    "Keeps installation permissions controlled by WordPress",
-    "Preserves GitHub-delivered automatic updates"
+    "Adds Google Business Profile review imports through Make.com",
+    "Adds secure single-review and bulk-import REST endpoints",
+    "Stores and deduplicates Google reviews locally",
+    "Adds review moderation, featuring and website shortcode display"
   ],
   "repository": "pooyadehdashti-oss/persiano-releases"
 }
