@@ -1,0 +1,20 @@
+name: Export theme base
+on:
+  push:
+    paths:
+      - '.github/workflows/export-theme-base.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload current Persiano theme package
+        uses: actions/upload-artifact@v4
+        with:
+          name: persiano-theme-base
+          path: persiano-dish-theme-v1.5.0.zip
+          if-no-files-found: error
+          retention-days: 1
